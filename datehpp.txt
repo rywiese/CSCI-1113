@@ -1,0 +1,11 @@
+//#ifndef DATE
+//#define DATE
+class date
+{
+public:
+	int day;
+	int month;
+	int year;
+	void print() const;
+};
+//#endif

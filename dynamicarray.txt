@@ -1,0 +1,71 @@
+#include <iostream>
+
+using namespace std;
+
+int * addOne(int * p, int n);
+int * copyAdd(int * p, int n);
+void display(int *p, int n);
+
+int main()
+{
+    int size; // size will be 5
+    cout << "Enter a size: " << endl;
+    cin >> size;
+    int *p;
+    p = new int[size];
+    for(int i=0; i<size; i++)
+    {
+        p[i] = i;
+    }
+    
+    cout << "p" << endl;
+    display(p, size); // 0, 1, 2, 3, 4
+    
+    int *a;
+    a = addOne(p, size);
+    cout << "a" << endl;
+    display(a, size); // 1, 2, 3, 4, 5
+    
+    cout << endl << "p" << endl;
+    display(p, size); // 1, 2, 3, 4, 5
+    
+    int *b;
+    b = copyAdd(p, size);
+    
+    cout << endl << "b" << endl;
+    display(b, size); // 2, 3, 4, 5, 6
+
+    cout << endl << "p" << endl;
+    display(p, size); // 1, 2, 3, 4, 5
+
+    return 0;
+}
+
+int * addOne(int * p, int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        p[i]++;
+    }
+    return p;
+}
+
+int * copyAdd(int * p, int n)
+{
+    int *a;
+    a = new int[n];
+    for(int i=0; i<n; i++)
+    {
+        a[i] = p[i] + 1;
+    }
+    return a;
+}
+
+void display(int *p, int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        cout << p[i] << endl;
+    }
+    cout << endl;
+}

@@ -1,0 +1,11 @@
+#ifndef DATE_CPP
+#define DATE_CPP
+#include <iostream>
+#include "dateClass.hpp"
+
+
+
+void date::print() const {
+	std::cout << month << "/" << day << "/" << year;
+}
+#endif
